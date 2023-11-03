@@ -2,8 +2,13 @@ import cocotb
 from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge, FallingEdge, Timer, ClockCycles
 
-input_arr = [0b0000100, 0b0010000, 0b0100010, 0b0010100, 0b0110000, 0b0100011, 0b0000101, 0b0100000, 0b0001000, 0b0010011]
-input_labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# Inputs to perceptron:
+# Inputs are of the following structure: first 3 bits are number of edges, last 4 bits are number of curves
+# Numbers in array are in order 0-9 with a bogus test input for the last one
+input_arr = [0b0000100, 0b0010000, 0b0100010, 0b0010100, 0b0110000, 0b0100011, 0b0000101, 0b0100000, 0b0001000, 0b0010011, 0b0111011]
+
+# Labels of expected outputs given inputs, if given a bogus input, the result should be 31
+input_labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 31] 
 @cocotb.test()
 async def test_my_design(dut):
 

@@ -17,6 +17,7 @@ module tt_um_perceptron_connorguzi #( parameter MAX_COUNT = 24'd10_000_000 ) (
     // instantiate segment display
     // perceptron perceptron(.edges(ui_in[2:0]), .curves(ui_in[6:3]), .out(uo_out[3:0]));
     perceptron perceptron(.edges(ui_in[6:4]), .curves(ui_in[3:0]), .out(uo_out[3:0]));
+    bnn bnn(.in(ui_in[6:0]), .out(uo_out[7:4]));
 
 
 endmodule

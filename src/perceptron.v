@@ -45,8 +45,7 @@ module perceptron (
             out_reg = 4'b1001;
         end
         else begin
-            // out_reg = 4'b1111;
-            out_reg = curve_reg;
+            out_reg = 4'b1111;
         end
     end
     assign out = out_reg;
