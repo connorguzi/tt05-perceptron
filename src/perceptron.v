@@ -15,34 +15,34 @@ module perceptron (
     always @(*) begin
         sum = edge_reg >> 1 + curve_reg >> 3;
         if(sum == 32)begin
-            out_reg <= 8'b00000000;
+            out_reg = 4'b00;
         end
         else if(sum==2)begin
-            out_reg <= 4'b1;
+            out_reg = 4'b1;
         end
         else if(sum==20)begin
-            out_reg <= 4'b10;
+            out_reg = 4'b10;
         end
         else if(sum==34)begin
-            out_reg <= 4'b11;
+            out_reg = 4'b11;
         end
         else if(sum==6)begin
-            out_reg <= 4'b100;
+            out_reg = 4'b100;
         end
         else if(sum==28)begin
-            out_reg <= 4'b101;
+            out_reg = 4'b101;
         end
         else if(sum==40)begin
-            out_reg <= 4'b110;
+            out_reg = 4'b110;
         end
         else if(sum==4)begin
-            out_reg <= 4'b111;
+            out_reg = 4'b111;
         end
         else if(sum==64)begin
-            out_reg <= 4'b1000;
+            out_reg = 4'b1000;
         end
         else if(sum==26)begin
-            out_reg <= 4'b1001;
+            out_reg = 4'b1001;
         end
     end
     assign out = out_reg;
