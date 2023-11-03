@@ -13,7 +13,7 @@ module perceptron (
     assign edge_reg = edges;
     assign curve_reg = curves;
     always @(*) begin
-        sum = edge_reg >> 1 + curve_reg >> 3;
+        sum = (edge_reg << 1) + (curve_reg << 3);
         if(sum == 32)begin
             out_reg = 4'b00;
         end
@@ -43,6 +43,10 @@ module perceptron (
         end
         else if(sum==26)begin
             out_reg = 4'b1001;
+        end
+        else begin
+            // out_reg = 4'b1111;
+            out_reg = curve_reg;
         end
     end
     assign out = out_reg;
