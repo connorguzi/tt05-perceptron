@@ -41,7 +41,8 @@ module perceptron (
         else if(sum==26)begin
             out_reg <= 8'b1001;
         end
-        assign out = out_reg;
     end
+    assign out = out_reg;
+
 endmodule
 
