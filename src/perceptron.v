@@ -11,34 +11,34 @@ module perceptron (
     assign sum = edges >> 1 + curves >> 3;
     
     if(sum == 32)begin
-        out = 8'b00000000
+        out <= 8'b00000000
     end
     else if(sum==2)begin
-        out = 8'b1
+        out <= 8'b1
     end
     else if(sum==20)begin
-        out = 8'b10
+        out <= 8'b10
     end
     else if(sum==34)begin
-        out = 8'b11
+        out <= 8'b11
     end
     else if(sum==6)begin
-        out = 8'b100
+        out <= 8'b100
     end
     else if(sum==28)begin
-        out = 8'b101
+        out <= 8'b101
     end
     else if(sum==40)begin
-        out = 8'b110
+        out <= 8'b110
     end
     else if(sum==4)begin
-        out = 8'b111
+        out <= 8'b111
     end
     else if(sum==64)begin
-        out = 8'b1000
+        out <= 8'b1000
     end
     else if(sum==26)begin
-        out = 8'b1001
+        out <= 8'b1001
     end
 endmodule
 
